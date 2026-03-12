@@ -1,0 +1,21 @@
+
+<!-- <form (ngSubmit)="ajouterArticle()">
+    <input type="text" name="articleNom" id="" [(ngModel)]="articleNom">
+    <button type="submit">Ajouter</button>
+</form> -->
+
+<form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+    <label for="title">titre</label>
+    <input 
+    type="text" 
+    formControlName="title">
+    @if (title.invalid && (title.dirty || title.touched)) {
+        <span>ce champ doit comporter au moins 3 caracteres </span>
+    }
+    <label for="description">Description</label>
+    <textarea name="" id="" formControlName="content"></textarea>
+
+    <button type="submit" [disabled]="articleForm.invalid">Ajouter</button>
+</form>
+
+

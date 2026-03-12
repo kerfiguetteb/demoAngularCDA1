@@ -1,0 +1,11 @@
+<div class="bg-red-200 p-2  ">
+
+<h2>composant parent (liste)</h2>
+<div class="flex gap-2">
+
+    @for (article of articles; track $index) {
+        <app-article-item [article]="article" ></app-article-item> 
+    }
+</div>
+</div>
+
